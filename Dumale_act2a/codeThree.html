@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>My Third Page</title>
+	<style type="text/css">
+	* {
+		padding: 0;
+		margin: 0;
+	}	
+	body {
+		background-image: url("back5.jpg");
+		background-repeat: none;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: contain;
+	}
+
+	#circle {
+
+		width: 500px;
+		height: 500px;
+		background-color: rgba(300,300,300,.0);
+		background-repeat: none;
+		background-attachment: fixed;
+		background-position: center;
+		background-size: contain;
+		position: fixed;
+		margin-left: 435px;
+		margin-top: 75px;
+		border-radius: 50%;
+		transition: 2s;
+		cursor: pointer;
+		color: rgba(300,300,300,0);
+	}
+
+
+
+	#circle p {
+		position: absolute;
+		margin-top: 380px;
+		margin-left: 200px;
+	}
+
+	/*#circle:hover {
+
+		background-image: url(back5hover.png);
+		transition-delay: 2s;
+	}*/
+
+	#act3 {
+
+		background-color: rgba(300,300,300,.7);
+		width: 500px;
+		height:1px;
+		position: fixed;
+		margin-left: 440px;
+		margin-top: 0px;
+		border-radius: 10px;
+		overflow: hidden;
+	}
+
+	#act3 h3 {
+
+		margin-left: 180px;
+	}
+
+	#act3 h4,ul,ol,dl,dd{
+
+		margin-left: 20px;
+		padding: 5px;
+	}
+
+	#hideMe {
+
+		position: absolute;
+		margin-left: 230px;
+		margin-top: 100px;
+		animation-name: jump;
+		animation-delay: 2s;
+		animation-iteration-count: infinite;
+		animation-duration: 3s;
+		height: 30px;
+		width: 30px;
+		cursor: pointer;
+
+	}
+
+	#hideMe h1{
+		margin-left: 5px;
+	}
+
+	@keyframes jump {
+		0%{background-color: orange; top: 420px; border-radius: 50%;}
+		50%{background-color: red; top: 410px; border-radius: 60%;}
+		100%{background-color: orange; top: 420px; border-radius: 50%;}
+	}
+
+	#containerP{
+
+		position: fixed;
+		color: rgba(300,300,300,.5);
+		padding: 10px;
+	}
+
+	</style>
+</head>
+<body>
+	<script type="text/javascript">
+		function show(){
+			document.getElementById("circle").style.transition = "5s";
+			document.getElementById("circle").style.opacity = "1";
+			document.getElementById("circle").style.backgroundImage = "url(back5hover.png)";
+			document.getElementById("circle").style.color = "rgba(300,300,300,.5)";
+		}
+
+
+		function hide(){
+			document.getElementById("circle").style.backgroundImage = "url(back5hover.png)";
+			document.getElementById("circle").style.transition = "2s";
+			document.getElementById("circle").style.opacity = ".01";
+			document.getElementById("circle").style.color = "rgba(300,300,300,.0)";
+		}
+
+		function showDoc(){
+			document.getElementById("act3").style.transition = "2s";
+			document.getElementById("act3").style.height = "580px";
+			document.getElementById("act3").style.marginTop = "20px";
+		}
+
+		function hideDoc(){
+			document.getElementById("act3").style.transition = "2s";
+			document.getElementById("act3").style.height = "0px";
+			document.getElementById("act3").style.marginTop = "0px";
+		}
+	</script>
+	<div id="container">
+		<p id="containerP">mouse over at the samurai</p>
+		<div id="circle" onmouseover="show()" onmouseout="hide()" onclick="showDoc()">
+			
+			<p>Click the katana</p>
+		</div>
+		<div id="act3">
+			<h3><u>Unordered List</u></h3>
+			<h4>My Favorite Subjects</h4>
+			<ul>
+				<li>Math</li>
+				<li>English</li>
+				<li>Science</li>
+			</ul>
+
+			<h3><u>Ordered List</u></h3>
+			<h4>My Favorite Football Clubs</h4>
+			<ol>
+				<li>Manchester United FC</li>
+				<li>Chelsea FC</li>
+				<li>Liver Pool FC</li>
+			</ol>
+
+			<h3><u>Description List</u></h3>
+			<dl>
+			<h4>The top players in each club</h4>
+				<dt>
+					<h5>Manchester United</h5>
+					<dd>
+						Beckham,giggs, Cole, Stam, Barthez, Yorke, Kean
+					</dd>
+					<h5>LiverPool</h5>
+					<dd>
+						Owen, Heskey, Fowler
+					</dd>
+					<h5>Arsenal</h5>
+					<dd>
+						Bergamp, Kanu, Henry, Seaman, Adams
+					</dd>
+				</dt>
+
+			</dl>
+			<div id="hideMe" onclick="hideDoc()">
+				<h1>^</h1>
+			</div>
+		</div>
+	</div>
+
+</body>
+</html>
